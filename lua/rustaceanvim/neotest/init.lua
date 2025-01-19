@@ -300,10 +300,10 @@ function NeotestAdapter.build_spec(run_args)
   table.insert(args, insert_pos, '--no-fail-fast')
   if is_cargo_test then
     -- cargo test needs to pass --color=never to the test runner too
-    table.insert(args, '--color=never')
+    table.insert(args, '--color=always')
   else
     table.insert(args, 2, '--color')
-    table.insert(args, 3, 'never')
+    table.insert(args, 3, 'always')
   end
   ---@type rustaceanvim.neotest.RunSpec
   ---@diagnostic disable-next-line: missing-fields
